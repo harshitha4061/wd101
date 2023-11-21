@@ -1,4 +1,4 @@
-    <script>
+
         const userForm = document.querySelector('form');
 
         const retrieveEntries = () => {
@@ -61,10 +61,10 @@
             localStorage.setItem('userEntries', JSON.stringify(userEntries));
             displayEntries();
         };
-</script>
+
 
         userForm.addEventListener('submit', saveUserForm);
         displayEntries();
         if (!localStorage.getItem('userEntries')) {
             localStorage.setItem('userEntries', JSON.stringify([]))};
-    </script>
+
