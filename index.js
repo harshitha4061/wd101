@@ -1,17 +1,18 @@
 
-        const userForm = document.querySelector('form');
+const userForm = document.querySelector('form');
 
-        const retrieveEntries = () => {
-            let entries = localStorage.getItem('userEntries');
+const retrieveEntries = () => {
+        let entries = localStorage.getItem('userEntries');
             if (entries) {
                 entries = JSON.parse(entries);
             } else {
                 entries = [];
             }
-            return entries;
+         return entries;
         };
 
-        const displayEntries = () => {
+        
+const displayEntries = () => {
             const entries = retrieveEntries();
 
             const tableEntries = entries.map((entry) => {
@@ -39,7 +40,8 @@
             details.innerHTML = table;
         };
 
-        const saveUserForm = (event) => {
+        
+const saveUserForm = (event) => {
             event.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -63,8 +65,8 @@
         };
 
 
-        userForm.addEventListener('submit', saveUserForm);
-        displayEntries();
-        if (!localStorage.getItem('userEntries')) {
+userForm.addEventListener('submit', saveUserForm);
+displayEntries();
+if (!localStorage.getItem('userEntries')) {
             localStorage.setItem('userEntries', JSON.stringify([]))};
 
